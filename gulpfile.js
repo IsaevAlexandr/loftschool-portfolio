@@ -3,10 +3,10 @@
  */
 const gulp          = require('gulp'),
       del           = require('del'),
+      path          = require('path');
       pug           = require('gulp-pug'),
       notify        = require('gulp-notify'),
       browserSync   = require('browser-sync').create(),
-      svgSprite     = require('gulp-svg-sprites'),
       svgmin        = require('gulp-svgmin'),
       cheerio       = require('gulp-cheerio'),
       replace       = require('gulp-replace'),
@@ -18,6 +18,7 @@ const gulp          = require('gulp'),
       gulpWebpack   = require('gulp-webpack'),
       webpack       = require('webpack'),
       webpackConfig = require('./webpack.config.js')
+      svgstore      = require('gulp-svgstore');
 /**
  * Project paths
  */
@@ -79,27 +80,33 @@ function clean() {
  * SVG Sprite Build task
  */
 function SVGSpriteBuild() {
-    return gulp.src(PATH.SVGIcons.src)
-    .pipe(svgmin({
-        js2svg: { pretty: true}
-    }))
-    .pipe(cheerio({
-        run: function ($) {
-            $('[fill]').removeAttr('fill');
-            $('[stroke]').removeAttr('stroke');
-            $('[style]').removeAttr('style');
-        }
-    }))
-    .pipe(replace('&gt;', '>'))
-    .pipe(svgSprite({
-            mode: "symbols",
-            preview: false,
-                svg: {
-                    symbols: 'mySprite.svg'
-                }
-        }
-    ))
-    .pipe(gulp.dest(PATH.SVGIcons.build))
+    return gulp
+        .src(PATH.SVGIcons.src)
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(rename({
+            basename: "mySprite",
+            suffix: ".min",
+          }))
+        .pipe(gulp.dest(PATH.SVGIcons.build));
 }
 
 /**
