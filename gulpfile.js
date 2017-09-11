@@ -92,12 +92,12 @@ function SVGSpriteBuild() {
     }))
     .pipe(replace('&gt;', '>'))
     .pipe(svgSprite({
-        mode: "symbols",
-        preview: false,
-        svg: {
-            symbols: 'mySprite.svg'
+            mode: "symbols",
+            preview: false,
+                svg: {
+                    symbols: 'mySprite.svg'
+                }
         }
-    }
     ))
     .pipe(gulp.dest(PATH.SVGIcons.build))
 }

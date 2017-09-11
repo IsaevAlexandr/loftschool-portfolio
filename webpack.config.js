@@ -7,9 +7,9 @@ const config = {
     filename: 'main.min.js'
   },
   plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true
-    })
+    // new UglifyJSPlugin({
+    //   sourceMap: true
+    // })
   ]
 };
 

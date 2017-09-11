@@ -8,17 +8,48 @@
     <meta name="keywords" content="Portfolio Isaev Alexandr">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="./css/styles.min.css">
+    <link rel="stylesheet" href="./css/index.min.css">
   </head>
   <body>
-    <h2>Добро пожаловать</h2>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="/my-works.html">Мои работы</a></li>
-      <li><a href="/blog.html">Блог</a></li>
-    </ul>
+    <div class="wrapper">
+      <header class="header">
+        <button class="autorization-btn">Авторизоваться</button>
+      </header>
+      <div class="introduction">
+        <div class="introduction__top">
+          <div class="introduction__foto" style="background-image: url('/images/fotos/avatar-foto.jpg');"> </div>
+          <div class="introduction__name">Исаев Адександр</div>
+          <div class="introduction__discription">Личный сайт веб разработчика</div>
+          <div class="socials">
+            <ul class="socials__list">
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="images/sprite/mySprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="images/sprite/mySprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="images/sprite/mySprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="introduction__menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a class="menu__link" href="/my-works.html">работы</a></li>
+              <li class="menu__item"><a class="menu__link" href="/about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="/blog.html">Блог</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="introduction__pop"></div>
+      </div>
+      <footer class="footer">
+        <div class="author">© Александр Исаев | создано с любовью в LoftSchool | 2016</div>
+      </footer>
+    </div>
     <script src="./scripts/main.min.js"></script>
   </body>
 </html>
