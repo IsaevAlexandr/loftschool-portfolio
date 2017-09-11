@@ -8,11 +8,11 @@ block content
   .wrapper
     header.header
       button.autorization-btn Авторизоваться
-    .introduction
-      .introduction__top
-        .introduction__foto(style="background-image: url('/images/fotos/avatar-foto.jpg')") 
-        .introduction__name Исаев Адександр
-        .introduction__discription Личный сайт веб разработчика
+    .intro
+      .intro__top
+        .intro__photo(style="background-image: url('images/photos/avatar-photo.jpg')") 
+        .intro__name Исаев Адександр
+        .intro__discription Личный сайт веб разработчика
         .socials
           ul.socials__list
             - var socials = ['vk', 'github','in']
@@ -21,14 +21,14 @@ block content
                 a.socials__link(href="#")
                   svg.socials__icon
                     use(xlink:href=`images/sprite/mySprite.svg#${social}`)
-        .introduction__menu
+        .intro__menu
           ul.menu__list
             //- - var menu = ['работы', 'Обо мне','Блог']
-            - var menu = [{name:'работы',href: '/my-works.html'},{name:'Обо мне',href: '/about.html'},{name:'Блог',href: '/blog.html'}]
+            - var menu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
             each item in menu
               li.menu__item
                 a.menu__link(href=`${item.href}`)= item.name
-      .introduction__pop
+      .intro__pop
     footer.footer
-      .author © Александр Исаев | создано с любовью в LoftSchool | 2016
+      .author © Александр Исаев | создано с любовью в LoftSchool | 2017
 
