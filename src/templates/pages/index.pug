@@ -13,12 +13,9 @@ block content
         .intro__photo(style="background-image: url('images/photos/avatar-photo.jpg')") 
         .intro__name Исаев Адександр
         .intro__discription Личный сайт веб разработчика
-        .socials
-          ul.socials__list
-            include ../modules/socials.pug
+        include ../modules/socials.pug
         .intro__menu
           ul.menu__list
-            //- - var menu = ['работы', 'Обо мне','Блог']
             - var menu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
             each item in menu
               li.menu__item
