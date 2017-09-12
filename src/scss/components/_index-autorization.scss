@@ -1,0 +1,176 @@
+.autorization {
+    min-width: rem(340px);
+}
+.autorization__form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+}
+.autorization__row {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-bottom: rem(20px);
+}
+.autorization__title {
+    color: #ffffff;
+    font-family: "Sansus Webissimo";
+    font-size: rem(35px);
+    font-weight: 400;
+    line-height: rem(41px);
+    text-transform: uppercase;
+    position: relative;
+
+    &:after {
+        content: "";
+        width: rem(89px);
+        height: rem(20px);
+        display: block;
+        margin: 0 auto;
+        border-bottom: rem(3px) solid white;
+    }
+}
+
+.autorization__input {
+    flex: 1;
+    padding: rem(16px);
+    border-radius: 0px rem(27px) rem(27px) 0px;
+    border: rem(1px) solid $white;
+    color: $black;
+    background-color: $white;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+    outline: none;
+
+    @include placeholder {
+        color: rgba($black, .6);
+    }
+
+    &_error {
+        border-color: $red;
+    }
+    &_correct {
+        border-color: $green;
+    }
+}
+
+.autorization__icon-container {
+    width: rem(50px);
+    height: rem(53px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey;
+    border-radius: rem(27px) 0px 0px rem(27px);
+}
+.autorization__icon {
+    fill: $dark-grey;
+
+    &_error {
+        fill: $red;
+    }
+    &_correct {
+        fill: $green;
+    }
+}
+.autorization__pop-up {
+    position: absolute;
+    padding: rem(16px) rem(20px);
+    background-color: $red;
+    color: $white;
+    box-shadow: 0 0 rem(10px) rgba($black, 0.1);
+    border-radius: rem(5px);
+    top: 130%;
+    left: rem(50px);
+    z-index: 1;
+    display: none;
+
+    &_show {
+        display: block;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: rem(10px) solid $red;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+}
+.autorization_label {
+    display: flex;
+    margin: 0px rem(20px);
+}
+.autorization__input-checkbox {
+    display: none;
+
+    &:checked + .autorization__checkbox-fake{
+        background-color: $green;
+    }
+}
+
+.autorization__checkbox-fake-svg {
+    width: rem(15px);
+    height: rem(15px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    fill: $white;
+
+}
+.autorization__checkbox-fake,.autorization__radio-fake {
+    position: relative;
+	width: rem(20px);
+	height: rem(20px);
+    background-color: $white;
+    margin-right: rem(6px);
+    border-radius: rem(2px);
+}
+.autorization__radio-fake {
+    border-radius: 50%;
+}
+
+.autorization__text {
+    opacity: 0.8;
+    color: $white;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+}
+.autorization__input-radio {
+    display: none;
+
+    &:checked + .autorization__radio-fake {
+        &:after {
+            content: "";
+            width: rem(8px);
+            height: rem(8px);
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            background-color: $green;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    &:checked + .autorization__radio-fake + .autorization__text {
+        color: $green;
+    }
+}
+
+.autorization__menu {
+    width: 100%;
+}

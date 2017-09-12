@@ -1,0 +1,6 @@
+.a-menu 
+    ul.a-menu__list
+        - var menuAutorization = [{name:'На главную',href: '#'},{name:'Войти',href: '#'}]
+        each item in menuAutorization
+            li.a-menu__item
+                a.a-menu__link(href=`${item.href}`)= item.name
