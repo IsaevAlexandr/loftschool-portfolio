@@ -2,7 +2,25 @@ extends ../modules/main-template.pug
 
 block variables
   - var title = 'Добро пожаловать'
+  - var style = 'index'
 
 block content
-  h2= title
+  .wrapper
+    header.header
+      button.autorization-btn Авторизоваться
+    .intro
+      .intro__top
+        .intro__photo(style="background-image: url('images/photos/avatar-photo.jpg')") 
+        .intro__name Исаев Адександр
+        .intro__discription Личный сайт веб разработчика
+        include ../modules/socials.pug
+        .intro__menu
+          ul.menu__list
+            - var menu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
+            each item in menu
+              li.menu__item
+                a.menu__link(href=`${item.href}`)= item.name
+      .intro__pop
+    footer.footer
+      .author © Александр Исаев | создано с любовью в LoftSchool | 2017
 

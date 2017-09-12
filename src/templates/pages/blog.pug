@@ -2,6 +2,8 @@ extends ../modules/main-template.pug
 
 block variables
   - var title = 'Блог'
-
+  - var style = 'blog'
 block content
   h2= title
+
+  include ../modules/menu.pug
