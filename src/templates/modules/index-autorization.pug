@@ -1,37 +1,37 @@
 .autorization
     form(action="GET")
         .autorization__form
-        .autorization__row
-            .autorization__title Авторизуйтесь
-        .autorization__row
-            .autorization__icon-container
-                svg.autorization__icon(width='15' height='17')
-                    use(xlink:href=`images/sprite/mySprite.min.svg#login`)
-            input(type="login" placeholder='Логин').autorization__input
-            .autorization__pop-up Вы не ввели логин
-        .autorization__row 
-            .autorization__icon-container             
-                svg.autorization__icon(width='18' height='17')
-                    use(xlink:href=`images/sprite/mySprite.min.svg#password`)
-            input(type="password" placeholder='Пароль').autorization__input
-            .autorization__pop-up Вы не ввели пароль
-        .autorization__row
-            label.autorization_label 
-                input(type="checkbox" checked).autorization__input-checkbox
-                .autorization__checkbox-fake
-                    svg(width='10' height='10').autorization__checkbox-fake-svg
-                        use(xlink:href=`images/sprite/mySprite.min.svg#check`)
-                .autorization__text Я человек
-        .autorization__row
-            .autorization__text Вы точно не робот?
-        .autorization__row
-            label.autorization_label
-                input(type="radio" name ='i-you-sure' value='yes').autorization__input-radio
-                .autorization__radio-fake
-                .autorization__text Да 
-            label.autorization_label
-                input(type="radio" name ='i-you-sure' value='no' checked).autorization__input-radio 
-                .autorization__radio-fake
-                .autorization__text Не уверен
+            .autorization__row
+                .autorization__title Авторизуйтесь
+            .autorization__row
+                .autorization__icon-container
+                    svg.autorization__icon(width='15' height='17')
+                        use(xlink:href=`images/sprite/mySprite.min.svg#login`)
+                input(type="login" placeholder='Логин').autorization__input
+                .autorization__pop-up Вы не ввели логин
+            .autorization__row 
+                .autorization__icon-container             
+                    svg.autorization__icon(width='18' height='17')
+                        use(xlink:href=`images/sprite/mySprite.min.svg#password`)
+                input(type="password" placeholder='Пароль').autorization__input
+                .autorization__pop-up Вы не ввели пароль
+            .autorization__row
+                label.autorization_label 
+                    input(type="checkbox" checked).autorization__input-checkbox
+                    .autorization__checkbox-fake
+                        svg(width='10' height='10').autorization__checkbox-fake-svg
+                            use(xlink:href=`images/sprite/mySprite.min.svg#check`)
+                    .autorization__text Я человек
+            .autorization__row
+                .autorization__text Вы точно не робот?
+            .autorization__row
+                label.autorization_label
+                    input(type="radio" name ='i-you-sure' value='yes').autorization__input-radio
+                    .autorization__radio-fake
+                    .autorization__text Да 
+                label.autorization_label
+                    input(type="radio" name ='i-you-sure' value='no' checked).autorization__input-radio 
+                    .autorization__radio-fake
+                    .autorization__text Не уверен
     .autorization__menu
         include ../modules/index-a-menu
