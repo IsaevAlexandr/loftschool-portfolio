@@ -1,7 +1,9 @@
-.intro {
-    min-width: rem(340px);
+.whoami {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.intro__photo {
+.whoami__photo {
     width: rem(140px);
     height: rem(140px);
     background-position: center center;
@@ -10,7 +12,7 @@
     margin-bottom: rem(20px);
 }
 
-.intro__name {
+.whoami__name {
     color: $white;
     font-family: Roboto;
     font-size: rem(28px);
@@ -19,7 +21,7 @@
     margin-bottom: rem(9px);
 }
 
-.intro__discription {
+.whoami__discription {
     opacity: 0.8;
     color: $white;
     font-family: Roboto;

@@ -5,11 +5,12 @@
 @import "config/_base.scss";
 
 //components
+@import 'components/_section-title.scss';
 @import 'components/_socials.scss';
-@import 'components/_index-intro.scss';
-@import 'components/_index-i-menu.scss';
-@import 'components/_index-autorization.scss';
-@import 'components/_index-a-menu.scss';
+@import 'components/_whoami.scss';
+@import 'components/_a-menu.scss';
+@import 'components/_login.scss';
+@import 'components/_l-menu.scss';
 
 //pages
 @import 'content/_index.scss';

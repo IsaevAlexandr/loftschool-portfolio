@@ -1,19 +1,18 @@
 .socials {
-    display: flex;
-    margin-bottom: rem(43px);
+    
 }
 .socials__list {
     display: flex;
 }
 .socials__item {
     margin-right: rem(10px);
-
+    
     &:last-child {
         margin-right: 0;
     }
 }
 .socials__link {
-    display: block;
+    display: flex;
 }
 
 .socials__icon {
@@ -21,6 +20,7 @@
     height: rem(24px);
     fill: rgba($white, .5);
     transition: 0.3s;
+    align-self: flex-end;
     
     &:hover {
         fill: $green-hover;
