@@ -1,6 +1,0 @@
-.i-menu
-    ul.i-menu__list
-        - var menu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
-        each item in menu
-            li.i-menu__item
-                a.i-menu__link(href=`${item.href}`)= item.name

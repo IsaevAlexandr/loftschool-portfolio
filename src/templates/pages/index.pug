@@ -1,4 +1,5 @@
 extends ../main-template.pug
+include ../modules/mixins.pug
 
 block variables
   - var title = 'Добро пожаловать'
@@ -14,12 +15,15 @@ block content
           include ../modules/whoami
         .intro__socials
           include ../modules/socials
-        include ../modules/a-menu
+        
+        - var authorMenu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
+        +menu('about-menu', authorMenu)
         
       .intro__login
         include ../modules/login
-        include ../modules/l-menu
+
+        - var loginMenu = [{name:'На главную',href: '#'},{name:'Войти',href: '#'}]
+        +menu('about-menu', loginMenu)
 
     footer.intro__footer
       .author © Александр Исаев | создано с любовью в LoftSchool | 2017
-

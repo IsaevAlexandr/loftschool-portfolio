@@ -1,15 +1,13 @@
-.a-menu {
-    width: 100%;
+.about-menu {
+    width: 100%;    
 }
-
-.a-menu__list {
+.about-menu__list {
     display: flex;
     border-radius: rem(0px) rem(0px) rem(5px) rem(5px);
     overflow: hidden;
 }
-
-.a-menu__item {
-    flex: 1;
+.about-menu__item {
+    flex:1;
     background-color: $green;
     border-right: rem(2px) solid rgba(#dee3e7, .5);
     transition: 0.3s;
@@ -26,8 +24,7 @@
         border-right: none;
     }
 }
-
-.a-menu__link {
+.about-menu__link {
     display: block;
     text-decoration: none;
     padding: rem(15px) rem(0px);
