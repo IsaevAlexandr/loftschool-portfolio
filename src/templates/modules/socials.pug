@@ -1,8 +1,9 @@
 .socials
     ul.socials__list
-        - var socials = ['vk', 'github','in']
-            each social in socials
-                li.socials__item
-                    a.socials__link(href="#")
-                        svg.socials__icon
-                            use(xlink:href=`images/sprite/mySprite.min.svg#${social}`)
+        - var socials = [{name: 'vk', dimensions: {w:'31',h:'17'}}, {name: 'github', dimensions: {w:'26',h:'22'}},{name: 'in', dimensions: {w:'24',h:'22'}}]
+        each social in socials
+            li.socials__item
+                a.socials__link(href="#")
+                    svg.socials__icon(width=`${social.dimensions.w}` height=`${social.dimensions.h}`)
+                        use(xlink:href=`images/sprite/mySprite.min.svg#${social.name}`)
+        

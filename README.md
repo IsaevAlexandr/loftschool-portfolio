@@ -2,6 +2,8 @@
 
 Выпускное задание продвинутого курса по Web разработке от [Loftschool](https://loftschool.com/)
 
+Ссылка на [gh-pages](https://isaevalexandr.github.io/portfolio-gh-pages/)
+
 ## Начало работы
 
   * Для работы необходима последняя стабилая версия `Node.js` и `npm`

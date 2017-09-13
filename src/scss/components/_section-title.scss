@@ -1,0 +1,19 @@
+.page-title {
+    color: $black;
+    font-family: "Sansus Webissimo";
+    font-size: 63px;
+    font-weight: 400;
+    line-height: 56px;
+    text-transform: uppercase;
+
+    &:after {
+        content: "";
+        //поправить размеры
+        width: rem(89px);
+        height: rem(20px);
+        display: block;
+        margin: 0 auto;
+        //поправить
+        border-bottom: rem(10px) solid $black;
+    }
+}

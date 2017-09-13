@@ -1,26 +1,29 @@
-extends ../modules/main-template.pug
+extends ../main-template.pug
+include ../modules/mixins.pug
 
 block variables
   - var title = 'Добро пожаловать'
   - var style = 'index'
 
 block content
-  .wrapper
-    header.header
+  section.intro
+    header.intro__header
       button.autorization-btn Авторизоваться
-    .intro
-      .intro__top
-        .intro__photo(style="background-image: url('images/photos/avatar-photo.jpg')") 
-        .intro__name Исаев Адександр
-        .intro__discription Личный сайт веб разработчика
-        include ../modules/socials.pug
-        .intro__menu
-          ul.menu__list
-            - var menu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
-            each item in menu
-              li.menu__item
-                a.menu__link(href=`${item.href}`)= item.name
-      .intro__pop
-    footer.footer
-      .author © Александр Исаев | создано с любовью в LoftSchool | 2017
+    .intro__content
+      .intro__author
+        .intro__whoami
+          include ../modules/whoami
+        .intro__socials
+          include ../modules/socials
+        
+        - var authorMenu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
+        +menu('about-menu', authorMenu)
+        
+      .intro__login
+        include ../modules/login
 
+        - var loginMenu = [{name:'На главную',href: '#'},{name:'Войти',href: '#'}]
+        +menu('about-menu', loginMenu)
+
+    footer.intro__footer
+      .author © Александр Исаев | создано с любовью в LoftSchool | 2017

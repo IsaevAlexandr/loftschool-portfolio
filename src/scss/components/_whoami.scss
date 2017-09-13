@@ -1,0 +1,31 @@
+.whoami {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.whoami__photo {
+    width: rem(140px);
+    height: rem(140px);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    margin-bottom: rem(20px);
+}
+
+.whoami__name {
+    color: $white;
+    font-family: Roboto;
+    font-size: rem(28px);
+    font-weight: 500;
+    line-height: rem(34px);
+    margin-bottom: rem(9px);
+}
+
+.whoami__discription {
+    opacity: 0.8;
+    color: $white;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: rem(24px);
+}

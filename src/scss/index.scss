@@ -3,10 +3,15 @@
 @import "config/_mixins.scss";
 @import "config/_fonts.scss";
 @import "config/_base.scss";
-@import "config/_layout.scss";
 
 //components
-@import 'components/_main-tempale.scss';
+@import 'components/_section-title.scss';
+@import 'components/_socials.scss';
+@import 'components/_whoami.scss';
+// @import 'components/_login-menu.scss';
+@import 'components/_login.scss';
+// @import 'components/_intro-menu.scss';
+@import 'components/_about-menu.scss';
 
 //pages
 @import 'content/_index.scss';
