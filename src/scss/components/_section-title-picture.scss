@@ -1,0 +1,103 @@
+.section-title {
+    text-align: center;
+    color: $black;
+    font-family: "Sansus Webissimo";
+    font-size: 63px;
+    font-weight: 400;
+    line-height: 56px;
+    text-transform: uppercase;
+
+    &:after {
+        content: "";
+        width: rem(89px);
+        height: rem(29px);
+        display: block;
+        margin: 0 auto;
+        border-bottom: rem(3px) solid $black;
+    }
+
+    &_login {
+        color: #ffffff;
+        font-size: rem(35px);
+        font-weight: 400;
+        line-height: rem(41px);
+    
+        &:after {
+            border-bottom: rem(3px) solid white;
+        }
+    }
+
+    &_about {
+        color: #566358;
+        line-height: 66px;
+
+        &:after {
+            content: "";
+            border-color:#566358;
+        }
+    }
+    &_i-am {
+        color: #566358;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 41px;
+
+        &:after {
+            content: "";
+            border-color:#566358;
+        }
+    }
+    &_usefulness {
+        // max-width: 250px;
+        color: #566358;
+        font-size: 35px;
+        line-height: 41px;
+        &:after {
+            content: "";
+            border-color:#566358;
+        }
+    }
+
+    &_contacts {
+        color: #566358;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 41px;
+        &:after {
+            content: "";
+            border-color:#566358;
+        }
+    }
+    &_fixed-menu {
+        color: #ffffff;
+        font-family: "Sansus Webissimo";
+        font-size: 63px;
+        font-weight: 400;
+        line-height: 24px;
+        text-transform: uppercase;
+        &:after {
+            content: "";
+            border-color: transparent;
+        }
+
+        &:hover {
+            &:after {
+                border-color: #ffffff;
+            }
+        }
+    }
+    
+}
+
+
+.section-picture {
+    width: 100%;
+    height: 100%;
+    @include center;
+    &_hero {
+        fill: rgba($white, 0.12);
+    }
+    &_adout {
+        fill: rgba(#93c42e, 0.2);
+    }
+}
