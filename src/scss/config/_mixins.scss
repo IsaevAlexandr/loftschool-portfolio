@@ -57,3 +57,10 @@
     transform: translateY(-50%);
   }
 }
+
+@mixin buttons {
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}

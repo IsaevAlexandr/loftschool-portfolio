@@ -1,0 +1,131 @@
+.about {
+    min-height: 650px;
+    display: flex;
+    position: relative;
+}
+.about__left,.about__right {
+    position: relative;
+    width: 50%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.about__left {
+    background-color: #ebefe2; 
+    display: flex;   
+}
+.about__right {
+    background-color: #f4f5f0;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 100%;
+    fill: red;
+    &_fill_white {
+        fill: #f4f5f0;
+    }
+    &_fill_begie {
+        fill: #ebefe2;
+    }
+    
+}
+.about__title {
+    width: 50%;
+    align-self: flex-start;
+    position: relative;
+    padding: 55px 0 26px;
+    margin-bottom: 10px;
+    margin: -7% 1% 0;
+}
+
+.about__i-am {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1%;
+}
+
+.i-am__photo {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.i-am__title {
+    margin-bottom: 30px;
+}
+.i-am__discription {
+    p {
+        margin-bottom: 15px;
+    }
+}
+
+.about__usefulness {
+    margin: 0 5%;
+}
+
+.usefulness__title {
+    margin-bottom: 30px;
+}
+.usefulness__discription {
+    margin-bottom: 50px;
+    p {
+        margin-bottom: 15px;
+    }
+}
+
+.about__skills {
+    margin: 0 5%;
+}
+
+.skills-list {
+    
+}
+.skills-list__item {
+    margin-bottom: 40px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.skills-row {
+}
+.skills-row__title {
+    color: #566358;
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+.skills-row__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-row__item {
+    margin-right: 35px;
+    margin-bottom: 20px;
+}
+.skill {
+    position: relative;
+}
+
+.skill__circle {
+    width: 110px;
+    height: 110px;
+    fill: $green;
+}
+
+.skill__title {
+    text-align: center;
+    color: #4e8839;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
+    @include center;
+}
