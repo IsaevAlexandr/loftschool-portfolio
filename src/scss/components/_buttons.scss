@@ -23,10 +23,14 @@
     height: rem(16px);
     fill: rgba($white, .7)
 }
+
 .close-btn {
     @include buttons;
-    
+    position: absolute;
+    top: rem(30px);
+    right: rem(30px);
 }
+
 .close-btn__icon {
     width: rem(40px);
     height: rem(35px);

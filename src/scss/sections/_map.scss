@@ -1,7 +1,6 @@
 .map {
     height: 100%;
-    min-height: 650px;
-    // position: relative;
+    position: relative;
     /* временно вместо карты */
     background: url('../../images/backgrounds/map.jpg') center center no-repeat;
     background-size: cover;
@@ -10,43 +9,49 @@
 }
 
 .map__contacts {
-    // @include center;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .contacts {
-    padding: 40px;
-    border-radius: 5px;
-    background-color: #f4f5f0;
+    padding: rem(40px);
+    border-radius: rem(5px);
+    background-color: $white;
     opacity: 0.85;
 }
+
 .contacts__title {
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
 }
+
 .contacts__list {
     
 }
+
 .contacts__item {
     display: flex;
-    margin-bottom: 26px;
+    margin-bottom: rem(26px);
     &:last-child {
-        margin-bottom: 0px;
+        margin-bottom: rem(0px);
     }
 }
+
 .contacts__icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+    width: rem(24px);
+    height: rem(24px);
+    margin-right: rem(10px);
+    fill: $green;
 }
+
 .contacts__name {
     opacity: 0.8;
-    color: #566358;
+    color: $title-color;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 500;
-    line-height: 24px;
+    line-height: rem(24px);
 }
 
 .footer {
@@ -55,21 +60,22 @@
 }
 
 .footer__row {
-    background-color: #373e42;
+    background-color: $black;
     opacity: 0.85;
     display: flex;
     justify-content: center;
-    padding: 30px 0px;
+    padding: rem(30px) rem(0px);
 
     &_fill_green {
-        background-color: #6c9c5a;
-        padding: 10px 0px;
+        background-color: $green;
+        padding: rem(10px) rem(0px);
     }
 }
+
 .footer__col {
     flex: 1;
-    border-right: 1px solid rgba($white, .2);
-    padding: 0px 30px;
+    border-right: rem(1px) solid rgba($white, .2);
+    padding: rem(0px) rem(30px);
 
     &:last-child {
         border: none;
@@ -77,37 +83,35 @@
 }
 
 .footer__text {
-    color: #ffffff;
+    color: $white;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 300;
-    line-height: 24px;
+    line-height: rem(24px);
 }
+
 .footer__quote {
     opacity: 0.5;
-    color: #ffffff;
+    color: $white;
     font-family: Roboto;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: rem(16px);
+    line-height: rem(26px);
     font-weight: 300;
     font-style: italic;
 }
 
 .footer__quote-author {
     opacity: 0.5;
-    color: #ffffff;
+    color: $white;
     font-family: Roboto;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: rem(16px);
+    line-height: rem(26px);
     font-weight: 700;
     font-style: italic;
 }
 
-
-
-
 .footer__menu {
-    margin-bottom: 27px;
+    margin-bottom: rem(27px);
 }
 
 .menu {
@@ -117,60 +121,29 @@
     display: flex;
 }
 .menu__item {
-    margin-right: 40px;
+    margin-right: rem(40px);
 }
 .menu__link {
-    color: #ffffff;
+    color: $white;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 700;
-    line-height: 24px;
+    line-height: rem(24px);
     text-decoration: none;
 }
-
 
 /* поправть! */
 .footer__socials, .socials__icon {
     fill: rgba($white, .5);
     &:hover {
-        fill: white;
+        fill: $white;
     }
 }
 
 .author {
-    color: #ffffff;
+    color: $white;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 300;
-    line-height: 24px;
-}
-
-.fixed-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color:rgba($green, 0.4);
-
-    &_active {
-        display: flex;
-    }
-}
-
-.fixed-menu__item {
-    margin-bottom: 50px;
-}
-.fixed-menu__link {
-    display: block;
-    cursor: pointer;
-}
-
-.close-btn {
-    position: absolute;
-    top: rem(30px);
-    right: rem(30px);
+    line-height: rem(24px);
 }

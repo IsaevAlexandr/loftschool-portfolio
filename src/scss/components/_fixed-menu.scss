@@ -1,0 +1,25 @@
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba($green, 0.4);
+    z-index: 1;
+
+    &_active {
+        display: flex;
+    }
+}
+
+.fixed-menu__item {
+    margin-bottom: rem(50px);
+}
+
+.fixed-menu__link {
+    display: block;
+    cursor: pointer;
+}

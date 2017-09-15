@@ -6,15 +6,17 @@
 @import "config/_layout.scss";
 
 //components
-@import 'components/_section-title-picture.scss';
+@import 'components/_section-title.scss';
+@import 'components/_section-picture.scss';
 @import 'components/_socials.scss';
 @import 'components/_whoami.scss';
 @import 'components/_buttons.scss';
+@import 'components/_fixed-menu.scss';
 
 //sections
-@import 'content/_hero.scss';
-@import 'content/_about.scss';
-@import 'content/_map.scss';
+@import 'sections/_hero.scss';
+@import 'sections/_about.scss';
+@import 'sections/_map.scss';
 
 
 
