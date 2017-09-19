@@ -1,0 +1,11 @@
+.my-works {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dubletriangle {
+    position: absolute;
+    bottom: 100%;
+    fill: $white;
+}
