@@ -10,9 +10,9 @@
     background-color:rgba($green, 0.4);
     z-index: 1;
 
-    &_active {
-        display: flex;
-    }
+    &_show {
+        display: flex;  
+    }  
 }
 
 .fixed-menu__item {

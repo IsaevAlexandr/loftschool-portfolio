@@ -31,62 +31,53 @@ block content
         svg.arrow-down__icon(width=`26` height=`16`)
           use(xlink:href=`images/sprite/mySprite.min.svg#arrow_down`)
   section.section.my-works
-    
-    .my-works__title
-      svg.dubletriangle(viewbox="0 0 1000 100" preservAspectRatio="none")
+    svg.dubletriangle(viewbox="0 0 1000 100" preservAspectRatio="none")
         polygon(points='0,100 0,0 500,100 500,100 1000,0 1000,100')
+    .my-works__title
       .section-title.section-title_my-works Мои работы
+      svg(width='100' height='100').section-picture
+        use(xlink:href=`images/sprite/mySprite.min.svg#works_header`)
 
-    //- общий класс для слайдера
-    .my-works__slider.slider
-      //- слайдер для описания (название, ссылка и технологии проекта)
-      .slider__description
-        ul.description-sl
-          each item in sl
-            li.description-sl__item
-              .description-sl__title #{item.title}
-              .description-sl__skills #{item.skills}
-              a(href=`${item.link}`).description-sl__link
-                svg.description-sl__icon(width=`20` height=`19`)
-                  use(xlink:href=`images/sprite/mySprite.min.svg#link`)
-                .description-sl__text Посмотреть сайт
-
-      //- слайдер для фотографий проектов
-      .slider__photos.photos-sl
+    //- слайдер
+  section.section.slider
+    .slider__left.description-sl
+      .description-sl__container
+        .description-sl__title
+          .section-title.section-title_description-sl Сайт школы онлайн образования
+        .description-sl__skills HTML , CSS, JAVASCRIPT
+        a(href='').description-sl__link
+          svg.description-sl__icon(width=`20` height=`19`)
+            use(xlink:href=`images/sprite/mySprite.min.svg#link`)
+          .description-sl__text Посмотреть сайт
+    //- слайдер для фотографий проектов
+    .slider__right
+      .slider__photos
         ul.photos-sl
           each item in sl
-            li.photos-sl__item 
+            li.photos-sl__item.focus
               .photos-sl__slide(style=`background-image: url(${item.photo})`)
       //- слайер для кнопок
       .slider__nav-btns.nav-btns
         //- кнопка предыдущий
-        .nav-btns__sl-btn.nav-btns__sl-btn_prev
+        .nav-btns__sl-btn.nav-btns__sl-btn_fill_prev
           ul.sl-btn__list
             each item in sl
               li.sl-btn__item
                 .sl-btn__slide(style=`background-image: url(${item.photo})`)
-          
-          .arrow-down.arrow-up_sl-btn
-            button.arrow-down__btn
-              svg.arrow-down__icon(width=`26` height=`16`)
-                use(xlink:href=`images/sprite/mySprite.min.svg#arrow_down`)
+          svg.sl-btn__btn(width=`26` height=`16`)
+            use(xlink:href=`images/sprite/mySprite.min.svg#arrow_down`)
         //- кнопка следующий
-        .nav-btns__sl-btn.nav-btns__sl-btn_next
+        .nav-btns__sl-btn.nav-btns__sl-btn_fill_next
           ul.sl-btn__list
             each item in sl
               li.sl-btn__item
-                .sl-btn__slide(style=`background-image: url(${item.photo})`)
-          .arrow-up.arrow-up_sl-btn
-            button.arrow-up__btn
-              svg.arrow-up__icon(width=`26` height=`16`)
-                use(xlink:href=`images/sprite/mySprite.min.svg#portf_arrow_up`)
-
-      
-
+                .sl-btn__slide(style=`background-image: url(${item.photo})`)    
+          svg.sl-btn__btn(width=`26` height=`16`)
+            use(xlink:href=`images/sprite/mySprite.min.svg#portf_arrow_up`)
   section.section.feedback
     .feedback__title
       .section-title.section-title_feedback Что обо мне говорят
-      svg(width='100' height='100').section-picture.section-picture_feedback
+      svg(width='100' height='100').section-picture
         use(xlink:href=`images/sprite/mySprite.min.svg#about_header`)
     .feedback__reviews.reviews
       ul.reviews__list
@@ -155,5 +146,5 @@ block content
           use(xlink:href=`images/sprite/mySprite.min.svg#cross`)
       each item in ['Мои работы','Блог','Обо мне','Авторизация']
         .fixed-menu__item
-          a.fixed-menu__link
+          a.fixed-menu__link()
             .section-title.section-title_fixed-menu #{item}

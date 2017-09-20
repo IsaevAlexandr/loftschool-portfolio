@@ -7,60 +7,68 @@
 }
 
 .feedback__title {
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: rem(30px);
+    margin-top: rem(25px);
+    padding: rem(20px);
     position: relative;
 }
+
 .feedback__reviews {
     display: flex;
-    margin-bottom: 70px;
+    margin-bottom: rem(70px);
 }
+
 .reviews {
     justify-content: center;
 }
+
 .reviews__list {
     display: flex;
     text-align: center;
 }
+
 .reviews__photo-container {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: rem(100px);
+    height: rem(100px);
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 21px;
+    margin-bottom: rem(21px);
     
 }
+
 .reviews__photo {
     max-height: 100%;
 }
+
 .reviews__item + .reviews__item {
-    margin-left: 25px;
+    margin-left: rem(25px);
 
 }
+
 .reviews__text {
-    color: #5d5a55;
+    color: $title-color;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-style: italic;
-    line-height: 26px;
-    max-width: 350px;
+    line-height: rem(26px);
+    max-width: rem(350px);
 }
 
 .reviews__author-name {
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     line-height: 24px;
-    color: #4e8839;
+    color: $green-hover;
     font-weight: 700;
     font-style: italic;
 }
 
 .reviews__author-status {
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     line-height: 24px;
-    color: #373e42;
+    color: $black;
     font-weight: 700;
     font-style: italic;
 }
@@ -73,34 +81,38 @@
 .feedback-form {
     display: flex;
     flex-direction: column;
-    padding: 45px 0px 0px;
-    background-color: #fff;
-    border-radius: 5px;
-    background-color:rgba(#dadbd6, 0.6);
-    width: 380px;
-    margin-bottom: 70px;
+    padding: rem(45px) rem(0px) rem(0px);
+    background-color: $white;
+    border-radius: rem(5px);
+    background-color:rgba($grey, 0.6);
+    width: rem(380px);
+    margin-bottom: rem(70px);
 }
+
 .feedback-form__row {
     position: relative;
     display: flex;
-    padding: 0 20px;
+    padding: 0 rem(20px);
     
 }
+
 .feedback-form__row + .feedback-form__row {
-    margin-top: 20px;
+    margin-top: rem(20px);
 }
+
 .feedback-form__title {
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: rem(10px);
 }
+
 .feedback-form__input {
     width: 100%;
-    padding: 16px 20px;
+    padding: rem(16px) rem(20px);
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 400;
     background-color: rgba($white,.85);
-    border-radius: 27px;
+    border-radius: rem(27px);
     border: none;
     outline: none;
 
@@ -146,15 +158,16 @@
         border-right-color: transparent;
     }
 }
+
 .feedback-form__textarea {
     width: 100%;
-    height: 140px;
-    padding: 16px 20px;
+    height: rem(140px);
+    padding: rem(16px) rem(20px);
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 400;
     background-color: rgba($white,.85);
-    border-radius: 27px;
+    border-radius: rem(27px);
     border: none;
     outline: none;
     resize: none;
@@ -163,20 +176,19 @@
     }
 }
 
-
 .feedback-form__row-btn {
     border-radius: rem(0px) rem(0px) rem(5px) rem(5px);
     overflow: hidden;
-    padding: 0px;
+    padding: rem(0px);
 }
 .feedback-form__btn {
     @include buttons;
     width: 50%;
-    padding: 20px 0;
+    padding: rem(20px) 0;
     background-color: $green;
     color: $white;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 500;
     transition: 0.3s;
 
@@ -191,11 +203,9 @@
 }
 
 .feedback-form__btn + .feedback-form__btn {
-    border-left: rem(2px) solid rgba(#dee3e7, .5);
+    border-left: rem(2px) solid rgba($grey, .5);
 }
-
 
 .feedback__bottom {
     display: flex;
 }
-
