@@ -1,0 +1,16 @@
+.triangle {
+    position: absolute;
+    bottom: 100%;
+    &_fill_white {
+        fill: #f4f5f0;
+    }
+    &_fill_begie {
+        fill: $begie;
+    }
+    
+}
+.dubletriangle {
+    position: absolute;
+    bottom: 100%;
+    fill: $white;
+}

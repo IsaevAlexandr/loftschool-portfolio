@@ -6,14 +6,15 @@
 @import "config/_layout.scss";
 
 //components
-@import 'components/_main-tempale.scss';
+@import 'components/_section-title.scss';
+@import 'components/_section-picture.scss';
+@import 'components/_socials.scss';
+@import 'components/_whoami.scss';
+@import 'components/_buttons.scss';
+@import 'components/_fixed-menu.scss';
+@import 'components/_triangles.scss';
 
-//pages
+//sections
+@import 'sections/_hero.scss';
 @import 'sections/_blog.scss';
-
-
-
-
-
-
-
+@import 'sections/_footer.scss';
