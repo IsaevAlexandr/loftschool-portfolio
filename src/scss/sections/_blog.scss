@@ -129,13 +129,13 @@ $margin-post-rows: rem(21px);
 
 .blog-menu {
     width: 80%;
+    position: relative;
     @include desk {
     width: 100%;
     }
 }
 
 .blog-menu__list {
-    position: relative;
     &:after {
         content: "";
         width: rem(50px);
@@ -147,8 +147,10 @@ $margin-post-rows: rem(21px);
         transform: translateX(-50%);
         border-radius: 50%;
         display: none;
+        cursor: pointer;
         @include tab {
             display: block;
+            
         }
     }
 
@@ -163,6 +165,7 @@ $margin-post-rows: rem(21px);
         transform: translateX(-50%);
         border-radius: 50%;
         display: none;
+        cursor: pointer;
         @include tab {
             display: block;
         }
