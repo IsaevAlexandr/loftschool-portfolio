@@ -40,40 +40,39 @@ block content
 
     //- слайдер
   section.section.slider
-    .slider__left.description-sl
+    .slider__discription.description-sl
       .description-sl__container
-        .description-sl__title
-          .section-title.section-title_description-sl Сайт школы онлайн образования
+        .description-sl__title Сайт школы онлайн образования
+          //- .section-title.section-title_description-sl Сайт школы онлайн образования
         .description-sl__skills HTML , CSS, JAVASCRIPT
         a(href='').description-sl__link
           svg.description-sl__icon(width=`20` height=`19`)
             use(xlink:href=`images/sprite/mySprite.min.svg#link`)
           .description-sl__text Посмотреть сайт
     //- слайдер для фотографий проектов
-    .slider__right
-      .slider__photos
-        ul.photos-sl
+    .slider__photos
+      ul.photos-sl
+        each item in sl
+          li.photos-sl__item.focus
+            .photos-sl__slide(style=`background-image: url(${item.photo})`)
+    //- слайер для кнопок
+    .slider__nav-btns.nav-btns
+      //- кнопка предыдущий
+      .nav-btns__sl-btn.nav-btns__sl-btn_fill_prev
+        ul.sl-btn__list
           each item in sl
-            li.photos-sl__item.focus
-              .photos-sl__slide(style=`background-image: url(${item.photo})`)
-      //- слайер для кнопок
-      .slider__nav-btns.nav-btns
-        //- кнопка предыдущий
-        .nav-btns__sl-btn.nav-btns__sl-btn_fill_prev
-          ul.sl-btn__list
-            each item in sl
-              li.sl-btn__item
-                .sl-btn__slide(style=`background-image: url(${item.photo})`)
-          svg.sl-btn__btn(width=`26` height=`16`)
-            use(xlink:href=`images/sprite/mySprite.min.svg#arrow_down`)
-        //- кнопка следующий
-        .nav-btns__sl-btn.nav-btns__sl-btn_fill_next
-          ul.sl-btn__list
-            each item in sl
-              li.sl-btn__item
-                .sl-btn__slide(style=`background-image: url(${item.photo})`)    
-          svg.sl-btn__btn(width=`26` height=`16`)
-            use(xlink:href=`images/sprite/mySprite.min.svg#portf_arrow_up`)
+            li.sl-btn__item
+              .sl-btn__slide(style=`background-image: url(${item.photo})`)
+        svg.sl-btn__btn(width=`26` height=`16`)
+          use(xlink:href=`images/sprite/mySprite.min.svg#arrow_down`)
+      //- кнопка следующий
+      .nav-btns__sl-btn.nav-btns__sl-btn_fill_next
+        ul.sl-btn__list
+          each item in sl
+            li.sl-btn__item
+              .sl-btn__slide(style=`background-image: url(${item.photo})`)    
+        svg.sl-btn__btn(width=`26` height=`16`)
+          use(xlink:href=`images/sprite/mySprite.min.svg#portf_arrow_up`)
   section.section.feedback
     .feedback__title
       .section-title.section-title_feedback Что обо мне говорят
