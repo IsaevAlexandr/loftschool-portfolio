@@ -37,19 +37,25 @@
     @include mob {
         width: 100%;
         margin-bottom: rem(30px);
-        // text-align: center;
+        border-right: none;
+        padding: 0;
+        padding-bottom: rem(15px);
+        border-bottom: rem(1px) solid rgba($white, .2);
+        margin: 0 rem(30px);
     }
     &:last-child {
         border: none;
         @include tab {
             width: 100%;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
-
-    // &_tab_style {
-    //     width: 100%;
-    // }
+}
+.footer__col + .footer__col {
+    @include mob {
+        padding-top: rem(15px);
+    }
 }
 
 

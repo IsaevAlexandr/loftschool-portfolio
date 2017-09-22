@@ -25,8 +25,8 @@
     }
 
     &_about {
-        font-size: 63px;
-        line-height: 66px;
+        font-size: rem(63px);
+        line-height: rem(66px);
     }
     &_i-am {
 
@@ -40,8 +40,8 @@
     }
     &_fixed-menu {
         color: $white;
-        font-size: 63px;
-        line-height: 24px;
+        font-size: rem(63px);
+        line-height: rem(24px);
         &:after {
             content: "";
             border-color: transparent;
