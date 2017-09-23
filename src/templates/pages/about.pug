@@ -24,9 +24,11 @@ block content
         svg.arrow-down__icon(width=`26` height=`16`)
           use(xlink:href=`images/sprite/mySprite.min.svg#arrow_down`)
   section.section.about
+    svg.triangle.triangle_fill_begie(viewbox="0 0 1000 100" preservAspectRatio="none")
+        polygon(points='0,0 0,100 500,100')
+    svg.triangle.triangle_fill_white(viewbox="0 0 1000 100" preservAspectRatio="none")
+        polygon(points='500,100 1000,0 1000,100')
     .about__left  
-      svg.triangle.triangle_fill_begie(viewbox="0 0 1000 100" preservAspectRatio="none")
-        polygon(points='0,0 0,100 1000,100')
       .about__title
         svg(width='100' height='100').section-picture
           use(xlink:href=`images/sprite/mySprite.min.svg#about_header`)
@@ -40,8 +42,7 @@ block content
           p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
 
     .about__right
-      svg.triangle.triangle_fill_white(viewbox="0 0 1000 100" preservAspectRatio="none")
-        polygon(points='0,100 1000,100 1000,0')
+      
       .about__usefulness
         .usefulness
           .usefulness__title
@@ -116,7 +117,7 @@ block content
       button(type='button').close-btn
         svg.close-btn__icon(width=`40` height=`35`)
           use(xlink:href=`images/sprite/mySprite.min.svg#cross`)
-      each item in ['Мои работы','Блог','Обо мне','Авторизация']
+      each item in [{name: 'Мои работы', href:'my-works.html'},{name:'Блог',href: 'blog.html'},{name:'Обо мне',href: 'about.html'},{name:'Авторизация',href: 'index.html'}]
         .fixed-menu__item
-          a.fixed-menu__link
-            .section-title.section-title_fixed-menu #{item}
+          a(href=`${item.href}`).fixed-menu__link
+            .section-title.section-title_fixed-menu #{item.name}

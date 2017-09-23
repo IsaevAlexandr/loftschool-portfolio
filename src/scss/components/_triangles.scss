@@ -3,6 +3,11 @@
     bottom: 100%;
     &_fill_white {
         fill: #f4f5f0;
+        
+        /* ;) */
+        @include tab {
+            fill: $begie;
+        }
     }
     &_fill_begie {
         fill: $begie;
