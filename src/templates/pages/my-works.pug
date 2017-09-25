@@ -3,7 +3,7 @@ include ../modules/mixins.pug
 
 block variables
   - var title = 'Мои работы'
-  - var style = 'my-works'
+  - var pageName = 'my-works'
   - 
     var sl = [
       {title: 'Сайт 1', skills: 'HTML , CSS, JAVASCRIPT',photo:'./images/myWorks/work-1.png', link:'#'},
@@ -147,3 +147,5 @@ block content
         .fixed-menu__item
           a(href=`${item.href}`).fixed-menu__link
             .section-title.section-title_fixed-menu #{item.name}
+block scripts
+  script(src=`./scripts/${pageName}.min.js`)

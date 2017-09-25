@@ -3,7 +3,7 @@ include ../modules/mixins.pug
 
 block variables
   - var title = 'Обо мне'
-  - var style = 'about'
+  - var pageName = 'about'
 
 block content
   section.section.hero
@@ -121,3 +121,5 @@ block content
         .fixed-menu__item
           a(href=`${item.href}`).fixed-menu__link
             .section-title.section-title_fixed-menu #{item.name}
+block scripts
+  script(src=`./scripts/${pageName}.min.js`)
