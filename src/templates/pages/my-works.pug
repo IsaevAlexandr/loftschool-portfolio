@@ -17,9 +17,8 @@ block content
     header.hero__header
       .hero__socials
         include ../modules/socials
-      button.hamburger
-        svg.hamburger__icon(width=`40` height=`35`)
-          use(xlink:href=`images/sprite/mySprite.min.svg#hamburger`)
+      .hero__hamburger-menu
+        include ../modules/hamburger-menu
     .hero__content
       .hero__title  
         svg(width='100' height='100').section-picture.section-picture_hero
