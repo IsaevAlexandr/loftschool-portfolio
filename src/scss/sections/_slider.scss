@@ -1,37 +1,85 @@
 .slider {
     display: flex;
     height: 100%;
-}
-
-.slider__left, .slider__right {
-    width: 50%;
-    display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    @include tab {
+        flex-wrap: nowrap;
+    }
 }
 
 .description-sl {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #ebefe2;
+    @include tab {
+        width: 100%;
+        height: 25%;
+    }
+    @include mob {
+        height: 37%;
+    }
 }
 
 .description-sl__container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 50%;
+    @include tab {
+        max-width: 90%;
+    }
 }
 
 .description-sl__title {
+    color: $title-color;
+    font-family: "Sansus Webissimo";
+    font-size: rem(30px);
+    font-weight: 400;
+    text-transform: uppercase;
     margin-bottom: rem(27px);
+    &:after {
+        content: "";
+        width: 89px;
+        height: 3px;
+        display: block;
+        background-color: $title-color;
+        margin: 0 auto;
+        margin-top: rem(29px);
+        @include tab {
+            margin-top: rem(17px);
+        }
+        @include mob {
+            margin-top: rem(8px);
+        }
+    }
+    @include tab {
+    margin-bottom: rem(19px);
+    }
+    @include mob {
+        margin-bottom: rem(8px);
+    }
 }
 
 .description-sl__skills {
-    color: #4e8839;
+    color: $green;
     font-family: Roboto;
     font-size: rem(16px);
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: rem(57px);
+    @include tab {
+        margin-bottom: rem(38px);
+    }
+    @include mob {
+        margin-bottom: rem(8px);
+    }
 }
 
 .description-sl__link {
@@ -55,10 +103,18 @@
 }
 
 .slider__photos {
-    width: 100%;
+    width: 50%;
     height: 75%;
     overflow: hidden;
     
+    @include tab {
+        width: 100%;
+        height: 50%;
+        order: -1;
+    }
+    @include mob {
+        height: 43%;
+    }
 }
 
 .photos-sl {
@@ -76,7 +132,9 @@
     z-index: 1;
     opacity: 0;
     transition: 1s;
-
+    @include tab {
+        padding: 4%;
+    }
 }
 
 .photos-sl__slide {
@@ -95,14 +153,21 @@
 }
 
 .slider__nav-btns {
-    width: 100%;
+    width: 50%;
+    @include tab {
+        width: 100%;
+    }
 }
 
 .nav-btns {
     height: 25%;
     display: flex;
     overflow: hidden;
+    @include mob {
+        height: 20%;
+    }
 }
+
 .nav-btns__sl-btn {
     width: 50%;
     cursor: pointer;
@@ -140,8 +205,8 @@
     padding: rem(10px);
     width: 100%;
     height: 100%;
-    
 }
+
 .sl-btn__slide {
     width: 100%;
     height: 100%;
@@ -149,6 +214,7 @@
     background-position: center center;
     background-size: contain;
 }
+
 .sl-btn__btn {
     fill: $black;
     @include center;

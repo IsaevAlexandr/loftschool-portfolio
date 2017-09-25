@@ -3,7 +3,8 @@
     background: url('../images/backgrounds/main-background.jpg') center center no-repeat;
     background-size: cover;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    position: relative;
 }
 
 
@@ -13,12 +14,16 @@
     padding: rem(30px);
 }
 
-/* 
-    Так можно делать?
-*/
 .hero__socials, .socials__icon {
     fill: $white;
 } 
+
+.hero__hamburger-menu {
+
+}
+
+
+
 
 .hero__content {
     flex:1;
