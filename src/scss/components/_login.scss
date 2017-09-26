@@ -31,7 +31,9 @@
     @include placeholder {
         color: rgba($black, .6);
     }
-
+    &:focus {
+        border-color: #2A6B94;
+    }
     &_error {
         border-color: $red;
     }
@@ -145,6 +147,41 @@
     }
 }
 
-.login__menu {
+
+/* стилизация кнопок авторизации 26.09.17 */
+.login__form-btns {
     width: 100%;
+    display: flex;
+}
+
+.resume {
+    @include buttons;
+}
+.resume,.login__input-submit {
+    width: 50%;
+}
+
+.green-btn-style {
+    display: block;
+    text-decoration: none;
+    padding: rem(15px) rem(0px);
+    color: $white;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 500;
+    text-align: center;
+    background-color: $green;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        background-color: $green-hover;
+        transition: 0.3s;
+    }
+    &:active {
+        background-color: lighten($green-hover, 10%);
+        transition: 0.3s;
+    }
+}
+.green-btn-style + .green-btn-style {
+    border-left: rem(2px) solid rgba(#dee3e7, .5);
 }

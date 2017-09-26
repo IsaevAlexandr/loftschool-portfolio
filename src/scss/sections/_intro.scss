@@ -45,9 +45,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    
+    perspective: 1000;
+    &_active {
+        .intro__container {
+            transform: rotateY(180deg);
+        }
+    }
 }
 
+.intro__container {
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
 .intro__author, .intro__login{
+    /* скрывает обратную сторону веревернутого блока! */
+    backface-visibility: hidden;
+
     width: rem(340px);
     display: flex;
     flex-direction: column;
@@ -56,6 +72,17 @@
     border-radius: rem(5px);
     padding-top: rem(40px);
 }
+
+.intro__author {
+    z-index: 2;
+    position: absolute;
+}
+
+.intro__login {
+    top: -50%;
+    transform: rotateY(180deg);
+}
+
 .intro__whoami {
     margin-bottom: rem(35px);  
 }

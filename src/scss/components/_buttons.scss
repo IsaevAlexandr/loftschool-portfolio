@@ -1,13 +1,3 @@
-// .hamburger {
-//     @include buttons;
-// }
-
-// .hamburger__icon {
-//     width: rem(40px);
-//     height: rem(35px);
-//     fill: $white;
-// }
-
 .arrow-down {
     @include buttons;
     transition: 0.3s;
@@ -24,27 +14,15 @@
     fill: rgba($white, .7)
 }
 
-.close-btn {
-    @include buttons;
-    position: absolute;
-    top: rem(30px);
-    right: rem(30px);
-}
-
-.close-btn__icon {
-    width: rem(40px);
-    height: rem(35px);
-    fill: $white;
-}
-
-
 .arrow-up {
     justify-content: center;
 }
+
 .arrow-up__btn {
     @include buttons;  
     justify-content: center;
 }
+
 .arrow-up__icon {
     width: rem(26px);
     height: rem(16px);
@@ -56,4 +34,3 @@
             transition: 0.3s;
         }
 }
-
