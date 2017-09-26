@@ -14,6 +14,9 @@
     display: flex;
     justify-content: flex-end;
     padding: rem(24px) rem(100px);
+    @include mob {
+        justify-content: center;
+    }
 }
 .autorization-btn {
     border: rem(1px) solid $white;
@@ -44,6 +47,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     position: relative;
     
@@ -93,6 +97,10 @@
     display: flex;
     justify-content: center;
     padding-bottom: rem(40px);
+
+    @include mob {
+        padding-bottom: rem(10px);
+    }
 }
 
 .author {
