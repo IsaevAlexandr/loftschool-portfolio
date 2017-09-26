@@ -152,6 +152,8 @@
 .login__form-btns {
     width: 100%;
     display: flex;
+    border-radius: rem(0px) rem(0px) rem(5px) rem(5px);
+    overflow: hidden;
 }
 
 .resume {
