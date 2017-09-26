@@ -1,22 +1,25 @@
+import {toggleClass} from './helpers';
+
+/* activate hamburger menu and animate it */
 function hamMenu(){
     var hamBtn = document.querySelector('.hamburger-bnt');
-    var hamMenu = document.querySelector('.ham-menu');
     var menuItem = document.querySelectorAll('.ham-menu__item');
     
     hamBtn.addEventListener('click',function (e) {
         var timer = 200;
 
-        /* запрет скрола при активном меню */
+        /* scroll ban then menu is active  */
         if (hamBtn.className === 'hamburger-bnt'){
             document.body.style.overflow = 'hidden';
         }else {
             document.body.style.overflow = 'initial';
         }
+        
+        toggleClass('ham-menu','active');
+        toggleClass('hamburger-bnt','active');
 
-        hamBtn.classList.toggle('hamburger-bnt_active')
-        hamMenu.classList.toggle('ham-menu_active')
         menuItem.forEach(function(item) {
-            /* появление элементов меню с задержкой */
+            /* showing menu items whith delay */
             if(item.className === 'ham-menu__item'){
                 setTimeout(function(){
                     item.classList.toggle('ham-menu__item_active')
