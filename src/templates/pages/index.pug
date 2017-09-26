@@ -10,20 +10,18 @@ block content
     header.intro__header
       button.autorization-btn Авторизоваться
     .intro__content
-      .intro__author
-        .intro__whoami
-          include ../modules/whoami
-        .intro__socials
-          include ../modules/socials
-        
-        - var authorMenu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
-        +menu('about-menu', authorMenu)
-        
-      .intro__login
-        include ../modules/login
-
-        - var loginMenu = [{name:'На главную',href: '#'},{name:'Войти',href: '#'}]
-        +menu('about-menu', loginMenu)
+      .intro__container
+        .intro__author
+          .intro__whoami
+            include ../modules/whoami
+          .intro__socials
+            include ../modules/socials
+          
+          - var authorMenu = [{name:'работы',href: 'my-works.html'},{name:'Обо мне',href: 'about.html'},{name:'Блог',href: 'blog.html'}]
+          +menu('about-menu', authorMenu)
+          
+        .intro__login
+          include ../modules/login
 
     footer.intro__footer
       .author © Александр Исаев | создано с любовью в LoftSchool | 2017

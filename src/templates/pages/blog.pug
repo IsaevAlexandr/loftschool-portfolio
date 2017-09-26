@@ -89,16 +89,5 @@ block content
           .footer__quote-author — Martin Golding 
       .footer__row.footer__row_fill_green
         .author © Александр Исаев | создано с любовью в LoftSchool | 2017
-  
-  .fixed-menu
-    nav.fixed-menu__list
-      button(type='button').close-btn
-        svg.close-btn__icon(width=`40` height=`35`)
-          use(xlink:href=`images/sprite/mySprite.min.svg#cross`)
-      //- each item in ['Мои работы','Блог','Обо мне','Авторизация']
-      each item in [{name: 'Мои работы', href:'my-works.html'},{name:'Блог',href: 'blog.html'},{name:'Обо мне',href: 'about.html'},{name:'Авторизация',href: 'index.html'}]
-        .fixed-menu__item
-          a(href=`${item.href}`).fixed-menu__link
-            .section-title.section-title_fixed-menu #{item.name}
 block scripts
   script(src=`./scripts/${pageName}.min.js`)
