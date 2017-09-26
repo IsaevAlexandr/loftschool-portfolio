@@ -1,11 +1,18 @@
 .map {
     height: 100%;
     position: relative;
-    /* временно вместо карты */
-    background: url('../images/backgrounds/map.jpg') center center no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
+    @include tab {
+        min-height: 1000px;
+    }
+}
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .map__contacts {
@@ -13,6 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include mob {
+        align-items: flex-start;
+    }
 }
 
 .contacts {
@@ -20,6 +30,9 @@
     border-radius: rem(5px);
     background-color: $white;
     opacity: 0.85;
+    @include mob {
+        width: 100%;
+    }
 }
 
 .contacts__title {

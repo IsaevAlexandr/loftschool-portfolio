@@ -69,7 +69,7 @@ block content
                           
                         .skill__title #{skill}
   section.section.map
-    .map__yandex-map
+    #map
     .map__contacts
       .contacts
         .contacts__title
@@ -113,4 +113,6 @@ block content
   
   
 block scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxxZqzF80hXY_JqmWpdGliR9OG45V5WrM&callback=initMap"
+  type="text/javascript")
   script(src=`./scripts/${pageName}.min.js`)
