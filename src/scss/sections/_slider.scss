@@ -18,10 +18,10 @@
     background-color: #ebefe2;
     @include tab {
         width: 100%;
-        height: 25%;
+        height: 35%;
     }
     @include mob {
-        height: 37%;
+        height: 30%;
     }
 }
 
@@ -164,7 +164,7 @@
     display: flex;
     overflow: hidden;
     @include mob {
-        height: 20%;
+        height: 25%;
     }
 }
 
@@ -198,7 +198,8 @@
     height: 100%;
     /* перемещение слайдера */
     // transform: translateY(-30%);
-    // will-change:  
+    will-change: transform;
+    transition: 0.3s;
 }
 
 .sl-btn__item {
