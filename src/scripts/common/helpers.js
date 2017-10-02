@@ -12,22 +12,20 @@ function toggleClass(className, keyWord) {
  * @param {*String} className 
  * @param {*Number} duration (ms) 
  */
-function animatedScrollTo(className, duration) {
+function smoothScrollTo(className, duration) {
     var duration = duration || 300;
     var startPoint = window.pageYOffset;
-    var iteration = 60;
-    var distance = document.querySelector('.' + className).getBoundingClientRect().top;
+    var distance = Math.ceil(document.querySelector('.' + className).getBoundingClientRect().top);
+    var iteration = 120;
     var endPoint = distance + startPoint;
-    var distancePart = distance / iteration;
-
-    var sumParts = startPoint;
-    var tickTime = duration / iteration;
+    var distancePerTick = distance / iteration;
+    var sumParts = Math.ceil(startPoint + distancePerTick);
+    var tickTime = Math.ceil(duration / iteration);
 
     var animate = setTimeout(function tick() {
         window.scrollTo(0, sumParts);
-
         iteration--;
-        sumParts += distancePart;
+        sumParts += distancePerTick;
         animate = setTimeout(tick, tickTime);
         if (iteration <= 0) {
             clearTimeout(animate);
@@ -35,4 +33,4 @@ function animatedScrollTo(className, duration) {
     }, tickTime)
 }
 
-export {toggleClass, animatedScrollTo};
+export {toggleClass, smoothScrollTo};
