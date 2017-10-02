@@ -30,6 +30,10 @@ function smoothScrollTo(element, duration) {
     var tickTime = Math.ceil(duration / iteration);
 
     var animate = setTimeout(function tick() {
+        if (distance < 150){
+            window.scrollTo(0, endPoint);
+            return;
+        }
         window.scrollTo(0, sumParts);
         iteration--;
         sumParts += distancePerTick;
