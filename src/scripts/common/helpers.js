@@ -9,13 +9,20 @@ function toggleClass(className, keyWord) {
 
 /**
  * Smooth scroll to element
- * @param {*String} className 
+ * @param {*String or html element} element 
  * @param {*Number} duration (ms) 
  */
-function smoothScrollTo(className, duration) {
+function smoothScrollTo(element, duration) {
+    /* checking type of element. If it's a string select this element by class name, else work whith html element */
+    /* in other words we can pass in function class name or html element*/
+    var targetBlock = 
+        typeof element === 'string' ? 
+            document.querySelector('.' + element) : 
+            element;
+    
     var duration = duration || 300;
     var startPoint = window.pageYOffset;
-    var distance = Math.ceil(document.querySelector('.' + className).getBoundingClientRect().top);
+    var distance = Math.ceil(targetBlock.getBoundingClientRect().top);
     var iteration = 120;
     var endPoint = distance + startPoint;
     var distancePerTick = distance / iteration;
