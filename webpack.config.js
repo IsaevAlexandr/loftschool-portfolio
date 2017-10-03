@@ -22,11 +22,11 @@ const config = {
     path: PATH.build,
     filename: '[name].min.js',
 },
-  plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true
-    })
-  ]
+  // plugins: [
+  //   new UglifyJSPlugin({
+  //     sourceMap: true
+  //   })
+  // ]
 };
 
 module.exports = config;
