@@ -17,14 +17,23 @@ upBtn.addEventListener('click',function () {
 
 // ============================================
 
-let title = document.querySelector('.description-sl__title');
-let skills = document.querySelector('.description-sl__skills');
 var mainSlide = [].slice.call(document.querySelectorAll('.photos-sl__item'));  
+var worksNumber = mainSlide.length;
 
 /* Statement to all sliders. Main prop.  */
 var currentPos = 1;
 
-var worksNumber = mainSlide.length;
+/* Description text slider */
+var descSlider = {
+    title : document.querySelector('.description-sl__title'),
+    skills : document.querySelector('.description-sl__skills'),
+    params: [
+        { id:1, title: 'Сайт школы онлайн образования', skills: 'HTML , CSS, JAVASCRIPT'},
+        { id:2, title: 'Второй проект', skills: 'HTML , CSS, JAVASCRIPT'},
+        { id:3, title: 'Третий проект', skills: 'HTML , CSS, JAVASCRIPT'},
+        { id:4, title: 'Четвертый проект', skills: 'HTML , CSS, JAVASCRIPT'}
+    ]
+}
 
 /* Button slider (previous work) */
 var prevBtnSlider = {
@@ -39,18 +48,10 @@ var nextBtnSlider = {
     pos: changePos
 }
 
-/* Store for description slider */
-var projectDesc = [
-    { id:1, title: 'Сайт школы онлайн образования', skills: 'HTML , CSS, JAVASCRIPT'},
-    { id:2, title: 'Второй проект', skills: 'HTML , CSS, JAVASCRIPT'},
-    { id:3, title: 'Третий проект', skills: 'HTML , CSS, JAVASCRIPT'},
-    { id:4, title: 'Четвертый проект', skills: 'HTML , CSS, JAVASCRIPT'}
-]
-
 /* Need to correct displaing already loading document */
 reDrow();
 
-/* On click emitting currentPos  */
+/* On click chenging currentPos and redrow all sliders  */
 prevBtnSlider.elem.parentNode.addEventListener('click', function () {
     currentPos = changePos(prevBtnSlider.inc);
     reDrow();
@@ -76,17 +77,21 @@ function changePos(inc) {
  * Redrow slider section (all sliders). Depends of @currentPos global slider.
  */
 function reDrow() {
+    /* calculating inner work numder to display */
     prevBtnSlider.elem.style.transform = 'translateY(-'+ ((prevBtnSlider.pos(prevBtnSlider.inc))-1) + '00%)';
     nextBtnSlider.elem.style.transform = 'translateY(-'+ ((nextBtnSlider.pos(nextBtnSlider.inc))-1) + '00%)';
+
+    /* remove from all and add focuse class for current work  */
     mainSlide.forEach(function(element) {
         element.classList.remove('focus');
     });
     mainSlide[currentPos - 1].classList.add('focus');
 
-    title.innerHTML = projectDesc[currentPos - 1].title;
-    skills.innerHTML = projectDesc[currentPos - 1].skills;
-    smoothTextAppearance(title);
-    smoothTextAppearance(skills);
+    /* chenging fields value of descSlider and run smooth text appearance function  */
+    descSlider.title.innerHTML = descSlider.params[currentPos - 1].title;
+    descSlider.skills.innerHTML = descSlider.params[currentPos - 1].skills;
+    smoothTextAppearance(descSlider.title);
+    smoothTextAppearance(descSlider.skills);
 }
 
 /**
@@ -107,7 +112,7 @@ function smoothTextAppearance(elem, time = 60) {
         }, time * i);
     });
 
-    /* приводим элемент в первоначальны вид. Нужно ли? */
+    /* приводим элемент в первоначальны вид. Появляется баг: если часто нажимать на кнопку текст дергается. Зато сохраняется принцип целостности*/
     setTimeout(()=>{
         elem.innerHTML = elemInner;
     }, time * elemTimeoutcount)
