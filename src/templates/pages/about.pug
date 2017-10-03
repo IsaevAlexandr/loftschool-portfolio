@@ -53,21 +53,19 @@ block content
           - 
             var skills = [
               {name: 'Frontend',skills:['Html5', 'css3', 'JavaScript']},
-              {name: 'Backend',skills:['PHP', 'mySQL', 'Node.js& npm','Mongo.db']},
+              {name: 'Backend',skills:['PHP', 'mySQL', 'Node.js & npm','Mongo.db']},
               {name: 'WorkFlow',skills:['Git','Gulp','Bower']}
             ]
           each item in skills
-            li.skills-list__item
-              .skills-row
-                .skills-row__title #{item.name}
-                ul.skills-row__list
-                  each skill in item.skills
-                    li.skills-row__item
-                      .skill
-                        svg.skill__circle(width='110' height='110')
-                          use(xlink:href=`images/sprite/mySprite.min.svg#vk_round`)
-                          
-                        .skill__title #{skill}
+            li.skills-list__item.skills-row
+              .skills-row__title #{item.name}
+              ul.skills-row__list
+                each skill in item.skills
+                  li.skills-row__item.svg-circle
+                    svg(width='110' height='110' viewBox="0 0 110 110").svg-circle__body
+                      circle(r="45" cx="50%" cy="50%").svg-circle__first-border
+                      circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").svg-circle__second-border.circle-90
+                    .svg-circle__title #{skill}
   section.section.map
     #map
     .map__contacts
