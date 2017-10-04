@@ -4,7 +4,7 @@
  * @param {*String} keyWord 
  */
 function toggleClass(className, keyWord) {
-    document.querySelector('.' + className).classList.toggle(className+ '_' + keyWord);
+    document.querySelector('.' + className).classList.toggle(className + '_' + keyWord);
 }
 
 /**
@@ -15,11 +15,11 @@ function toggleClass(className, keyWord) {
 function smoothScrollTo(element, duration) {
     /* checking type of element. If it's a string select this element by class name, else work whith html element */
     /* in other words we can pass in function class name or html element*/
-    var targetBlock = 
-        typeof element === 'string' ? 
-            document.querySelector('.' + element) : 
-            element;
-    
+    var targetBlock =
+        typeof element === 'string' ?
+        document.querySelector('.' + element) :
+        element;
+
     var duration = duration || 300;
     var startPoint = window.pageYOffset;
     var distance = Math.ceil(targetBlock.getBoundingClientRect().top);
@@ -30,7 +30,7 @@ function smoothScrollTo(element, duration) {
     var tickTime = Math.ceil(duration / iteration);
 
     var animate = setTimeout(function tick() {
-        if (distance < 150){
+        if (distance < 150 && distance > 0) {
             window.scrollTo(0, endPoint);
             return;
         }
@@ -44,4 +44,4 @@ function smoothScrollTo(element, duration) {
     }, tickTime)
 }
 
-export {toggleClass, smoothScrollTo};
+export { toggleClass, smoothScrollTo };
