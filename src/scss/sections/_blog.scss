@@ -104,35 +104,43 @@ $margin-post-rows: rem(21px);
     display: flex;
     justify-content: flex-end;
     padding: 0 1%;
-    transition: 0.5s;
     
     @include tab {
-        width: 60%;
+        width: 100%;
         min-height: 100vh;
         position: absolute;
-        top: rem(70px);
-        left: -60%;
-        box-shadow: rem(3px) 0 rem(3px) rgba(0, 0, 0, 0.2);
-        background-color: $green;
-    }
-
-    @include mob {
-        width: 80%;
-        left: -80%;
-    }
-
-    &_active {
-        left: 0;
-        transition: 0.5s;
+        top: rem(0px);
+        left: -101%;
+        
     }
 }
 
 .blog-menu {
     width: 80%;
     position: relative;
+
     @include desk {
     width: 100%;
     }
+    @include tab {
+        width: 80%;
+        padding-left: 20%;
+        height: 100vh;
+        margin-top: -50px;
+        position: absolute;
+        transform: translate(2%,0);
+        box-shadow: rem(3px) 0 rem(3px) rgba(0, 0, 0, 0.2);
+        background-color: $green;
+        will-change: transform;
+
+        &_active {
+            transform: translate(80%,0);
+            transition: 0.3s;
+            z-index: 2;
+        }
+    }
+
+    
 }
 
 .blog-menu__list {
@@ -150,7 +158,6 @@ $margin-post-rows: rem(21px);
         cursor: pointer;
         @include tab {
             display: block;
-            
         }
     }
 
@@ -169,6 +176,9 @@ $margin-post-rows: rem(21px);
         @include tab {
             display: block;
         }
+    }
+    @include tab {
+        padding-top: rem(20px);
     }
 }
 
