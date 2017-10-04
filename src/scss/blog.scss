@@ -4,7 +4,6 @@
 @import "config/_fonts.scss";
 @import "config/_base.scss";
 @import "config/_layout.scss";
-
 //components
 @import 'components/_section-title.scss';
 @import 'components/_section-picture.scss';
@@ -13,8 +12,8 @@
 @import 'components/_whoami.scss';
 @import 'components/_buttons.scss';
 @import 'components/_triangles.scss';
-
 //sections
 @import 'sections/_hero.scss';
 @import 'sections/_blog.scss';
 @import 'sections/_footer.scss';
+@import 'sections/_preloader.scss';

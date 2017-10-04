@@ -1,0 +1,28 @@
+.preloader {
+    height: 100%;
+    background: url('../images/backgrounds/forest-prel-bg.jpg') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.svg-prel {
+    width: rem(140px);
+    height: rem(140px);
+}
+
+.svg-prel__big-circle {
+    stroke: $green-hover;
+}
+
+.svg-prel__little-circle {
+    fill: $green;
+}

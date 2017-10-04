@@ -7,26 +7,21 @@
     position: relative;
 }
 
-
 .hero__header {
     display: flex;
     justify-content: space-between;
     padding: rem(30px);
 }
 
-.hero__socials, .socials__icon {
+.hero__socials,
+.socials__icon {
     fill: $white;
-} 
-
-.hero__hamburger-menu {
-
 }
 
-
-
+.hero__hamburger-menu {}
 
 .hero__content {
-    flex:1;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,6 +43,7 @@
 .hero__whoami {
     @include center;
 }
+
 .hero__section-picture {
     width: 100%;
     height: 100%;
