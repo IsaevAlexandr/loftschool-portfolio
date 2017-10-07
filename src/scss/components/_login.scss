@@ -22,7 +22,7 @@
     flex: 1;
     padding: rem(16px);
     border-radius: 0px rem(27px) rem(27px) 0px;
-    border: rem(1px) solid $white;
+    border: rem(3px) solid $white;
     color: $black;
     background-color: $white;
     font-family: Roboto;
@@ -45,7 +45,7 @@
 
 .login__icon-container {
     width: rem(50px);
-    height: rem(53px);
+    height: rem(58px);
     display: flex;
     justify-content: center;
     align-items: center;

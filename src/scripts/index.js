@@ -17,51 +17,90 @@ resumeBtn.addEventListener('click', function() {
 
 
 //=========================
-/* how to validate filds */
+/* Валидация формы */
+
+// находим кнопку
 const submitBtn = document.querySelector('.login__input-submit');
 
-let loginField = {
+// представляем данные формы в виде объекта
+let indexForm = {
+    loginField: {
         element: document.querySelectorAll('.login__input')[0],
         popUp: document.querySelectorAll('.login__pop-up')[0]
+    },
+    passwordField: {
+        element: document.querySelectorAll('.login__input')[1],
+        popUp: document.querySelectorAll('.login__pop-up')[1]
+    },
+    showError(element) {
+        element.element.classList.add('login__input_error');
+        element.popUp.style.display = 'block';
+        setTimeout(function() {
+            element.popUp.style.display = 'none';
+        }, 2000)
+    },
+    showCorrect(element) {
+        element.element.classList.add('login__input_correct');
+    },
+    resetField(element, full = false) {
+        element.popUp.style.display = 'none'
+        element.element.className = 'login__input';
+        if (full) {
+            element.element.value = '';
+        }
     }
-    // console.log(loginField.popUp)
-let passwordField = {
-    element: document.querySelectorAll('.login__input')[1],
-    popUp: document.querySelectorAll('.login__pop-up')[1]
 }
 
+// создаем конфиг, по каким парамертам будем проверять поля
 const config = {
-    login: ['isNonEmpty', 'isNumber', 'isAlphaNum'],
+    login: ['isNonEmpty', 'isAlphaNum'],
     password: 'isNonEmpty'
 }
+
+// создаем экземпляр объекта валидатора
 const validator = new Validator(config);
+
+// по щелчку мыши собираются данные из полей форм.
+// сообщения об ошибках заносятся в массив validator.messages
+// 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     let data = {
-        login: loginField.element.value,
-        password: passwordField.element.value
+        login: indexForm.loginField.element.value,
+        password: indexForm.passwordField.element.value
     };
 
     validator.validate(data);
     if (validator.hasErrors()) {
 
+        indexForm.resetField(indexForm.loginField);
+        indexForm.resetField(indexForm.passwordField);
+
         if (validator.messages.login) {
-            loginField.popUp.innerHTML = validator.messages.login;
-            loginField.popUp.style.display = 'block';
-            loginField.element.classList.toggle('login__input_error');
-            setTimeout(function() {
-                loginField.popUp.style.display = 'none';
-            }, 1000)
+
+            indexForm.loginField.popUp.innerHTML = validator.messages.login;
+            indexForm.showError(indexForm.loginField);
+
         }
 
         if (!validator.messages.login) {
-            passwordField.popUp.innerHTML = validator.messages.password;
-            passwordField.popUp.style.display = 'block';
-            passwordField.element.classList.toggle('login__input_error');
-            setTimeout(function() {
-                passwordField.popUp.style.display = 'none';
-            }, 1000)
+
+            indexForm.showCorrect(indexForm.loginField);
+            indexForm.passwordField.popUp.innerHTML = validator.messages.password;
+            indexForm.showError(indexForm.passwordField);
+
         }
 
-    };
+    } else {
+
+        indexForm.showCorrect(indexForm.loginField);
+        indexForm.showCorrect(indexForm.passwordField);
+
+        // заглушка
+        setTimeout(() => {
+            indexForm.resetField(indexForm.loginField, true);
+            indexForm.resetField(indexForm.passwordField, true);
+        }, 3000);
+
+    }
 });

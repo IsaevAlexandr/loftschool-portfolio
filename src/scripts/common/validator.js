@@ -19,7 +19,7 @@ class Validator {
             },
             isAlphaNum: {
                 validate(value) {
-                    return !/[^а-я0-9]/i.test(value);
+                    return !/[^а-яА-Яa-zA-Z0-9]/i.test(value);
                 },
                 instructions: 'Поле может состоять только из букв и цифр, никаких специальных символов или пробелов'
             },
