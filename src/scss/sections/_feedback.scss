@@ -172,6 +172,10 @@
         border-left-color: transparent;
         border-right-color: transparent;
     }
+    @include mob {
+        width: rem(300px);
+        white-space: initial;
+    }
 }
 
 .feedback-form__textarea {
