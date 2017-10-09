@@ -1,6 +1,6 @@
 function initMap() {
-    var reutov = {lat: 55.760713, lng: 37.854598};
-    var center = {lat: 55.765713, lng: 37.854598};
+    var reutov = { lat: 55.760713, lng: 37.854598 };
+    var center = { lat: 55.765713, lng: 37.854598 };
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         disableDefaultUI: true,
@@ -11,4 +11,4 @@ function initMap() {
         map: map
     });
 }
-export {initMap};
+export default initMap;

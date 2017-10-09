@@ -1,8 +1,8 @@
 console.log('blog page')
-import { hamMenu } from './common/hamburgerMenu';
+import hamMenu from './common/hamburgerMenu';
 import { toggleClass, smoothScrollTo } from './common/helpers';
 
-hamMenu();
+hamMenu.init();
 
 /* scroll down to blog section */
 var downBtn = document.querySelector('.arrow-down ');
