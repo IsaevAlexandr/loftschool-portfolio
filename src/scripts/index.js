@@ -1,5 +1,5 @@
 console.log('index page')
-import IndexFormValidation from './common/indexFormValidation'
+import IndexFormValidation from './common/indexPageFormValidation'
 import IndexPageFlip from './common/indexPageFlip'
 
 IndexPageFlip.init();
