@@ -1,7 +1,9 @@
 console.log('my-works page')
 import { hamMenu } from './common/hamburgerMenu';
 import { toggleClass, smoothScrollTo } from './common/helpers';
+import worksFormValidation from './common/worksPageFormValidation'
 
+worksFormValidation.init();
 hamMenu();
 
 /* scrol down to my-works section */

@@ -1,6 +1,7 @@
 .login {
     min-width: rem(340px);
 }
+
 .login__form {
     display: flex;
     flex: 1;
@@ -8,6 +9,7 @@
     align-items: center;
     padding: 0px 20px;
 }
+
 .login__row {
     width: 100%;
     display: flex;
@@ -20,14 +22,13 @@
     flex: 1;
     padding: rem(16px);
     border-radius: 0px rem(27px) rem(27px) 0px;
-    border: rem(1px) solid $white;
+    border: rem(2px) solid $white;
     color: $black;
     background-color: $white;
     font-family: Roboto;
     font-size: rem(16px);
     font-weight: 400;
     outline: none;
-
     @include placeholder {
         color: rgba($black, .6);
     }
@@ -44,16 +45,16 @@
 
 .login__icon-container {
     width: rem(50px);
-    height: rem(53px);
+    height: rem(58px);
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $grey;
     border-radius: rem(27px) 0px 0px rem(27px);
 }
+
 .login__icon {
     fill: $dark-grey;
-
     &_error {
         fill: $red;
     }
@@ -61,6 +62,7 @@
         fill: $green;
     }
 }
+
 .login__pop-up {
     position: absolute;
     padding: rem(16px) rem(20px);
@@ -72,11 +74,9 @@
     left: rem(50px);
     z-index: 1;
     display: none;
-
     &_show {
         display: block;
     }
-
     &:after {
         content: "";
         @include center(x);
@@ -90,14 +90,15 @@
         border-right-color: transparent;
     }
 }
+
 .login_label {
     display: flex;
     margin: 0px rem(20px);
 }
+
 .login__input-checkbox {
     display: none;
-
-    &:checked + .login__checkbox-fake{
+    &:checked+.login__checkbox-fake {
         background-color: $green;
     }
 }
@@ -107,16 +108,18 @@
     height: rem(15px);
     @include center();
     fill: $white;
-
 }
-.login__checkbox-fake,.login__radio-fake {
+
+.login__checkbox-fake,
+.login__radio-fake {
     position: relative;
-	width: rem(20px);
-	height: rem(20px);
+    width: rem(20px);
+    height: rem(20px);
     background-color: $white;
     margin-right: rem(6px);
     border-radius: rem(2px);
 }
+
 .login__radio-fake {
     border-radius: 50%;
 }
@@ -128,10 +131,10 @@
     font-size: rem(16px);
     font-weight: 400;
 }
+
 .login__input-radio {
     display: none;
-
-    &:checked + .login__radio-fake {
+    &:checked+.login__radio-fake {
         &:after {
             content: "";
             width: rem(8px);
@@ -139,16 +142,17 @@
             border-radius: 50%;
             display: block;
             background-color: $green;
-            @include center();    
+            @include center();
         }
     }
-    &:checked + .login__radio-fake + .login__text {
+    &:checked+.login__radio-fake+.login__text {
         color: $green;
     }
 }
 
 
 /* стилизация кнопок авторизации 26.09.17 */
+
 .login__form-btns {
     width: 100%;
     display: flex;
@@ -156,11 +160,10 @@
     overflow: hidden;
 }
 
-.resume {
-    @include buttons;
-}
-.resume,.login__input-submit {
+.resume,
+.login__input-submit {
     width: 50%;
+    @include buttons;
 }
 
 .green-btn-style {
@@ -184,6 +187,7 @@
         transition: 0.3s;
     }
 }
-.green-btn-style + .green-btn-style {
+
+.green-btn-style+.green-btn-style {
     border-left: rem(2px) solid rgba(#dee3e7, .5);
 }
