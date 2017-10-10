@@ -1,0 +1,57 @@
+.error {
+    border: rem(2px) solid $red;
+}
+
+.slills-title {
+    color: $text;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 500;
+    /* Style for "Frontend" */
+}
+
+.skills-table {
+    margin-bottom: rem(15px);
+}
+
+button {
+    padding: rem(5px) rem(15px);
+    border-radius: rem(5px);
+    background-color: $begie;
+    border-color: $white;
+    outline: none;
+    color: $text;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+    margin-right: rem(15px);
+    &:disabled {
+        color: lighten($color: $text, $amount: 35)
+    }
+}
+
+input {
+    padding: rem(7px) rem(15px);
+    border-radius: rem(5px);
+    border: rem(1px) solid transparent;
+    outline: none;
+    color: $text;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+    @include mob {
+        max-width: 42%;
+    }
+}
+
+.buttons {
+    margin-bottom: rem(30px);
+}
+
+.validation-error {
+    margin-top: rem(10px);
+    color: $red;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+}
