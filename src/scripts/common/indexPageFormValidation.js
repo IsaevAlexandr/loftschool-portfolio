@@ -103,6 +103,7 @@ let IndexFormValidation = (function() {
                 setTimeout(() => {
                     indexForm.resetField(indexForm.loginField, true);
                     indexForm.resetField(indexForm.passwordField, true);
+                    window.location = 'admin.html';
                 }, 200);
 
             }
