@@ -114,6 +114,12 @@ const config = {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
+        }),
+        /* продакшн версия vue */
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
         })
     ]
 };
